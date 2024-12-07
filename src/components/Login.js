@@ -1,17 +1,20 @@
-import { Image, StyleSheet, View } from "react-native";
-import { Button, Card, Divider } from "react-native-paper";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Button, Card, Divider, Text } from "react-native-paper";
 import logo from './../../assets/images/logox.png';
 import { useForm } from "react-hook-form";
 import TextField from "./inputs/TextField";
 import GlobalStyles from "../../assets/styles/GlobalStyles";
 
-function Login() {
+function Login({goToScreen}) {
   const { control, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
+  const handleClick=()=>{
+    goToScreen(1);
+  }
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo_image} />
@@ -45,6 +48,12 @@ function Login() {
             >
               Login
             </Button>
+
+          
+
+            <TouchableOpacity onPress={handleClick} >
+              <Text style={styles.just_text_button}>No Account?register.</Text>
+            </TouchableOpacity>
           </View>
         </Card.Content>
       </Card>
@@ -86,6 +95,12 @@ const styles = StyleSheet.create({
     marginTop: 20, // Optional spacing
     backgroundColor: GlobalStyles.primary_color,
   },
+
+  just_text_button:{
+    marginTop:15,
+    fontWeight:'bold',
+    color:GlobalStyles.primary_color
+  }
 });
 
 export default Login;
