@@ -10,7 +10,7 @@ import CreatePost from './components/CreatePost';
 export default function App() {
   return (
    <PaperProvider>
-    <CreatePost/>
+    <Home/>
    </PaperProvider>
   );
 }

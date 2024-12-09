@@ -1,30 +1,26 @@
 import { StyleSheet, View } from "react-native";
 import CreatePost from "./CreatePost";
+import Feeds from "./Feeds";
 
-const Home=()=>{
-
-
-
-    return (<View style={style.container}>
-            <CreatePost style={style.create_post}/>
-            
-    </View>)
-
+const Home = () => {
+  return (
+    <View style={styles.container}>
+      <CreatePost/>
+     <View style={styles.feeds}>
+        <Feeds/>
+     </View>
+    </View>
+  );
 };
 
-const style = StyleSheet.create({
-    container:{
-        flex:1,
-        flexDirection:'column',
-        alignItems:'center'
-    },
-    create_post:{
-      alignSelf:'flex-start'
-    },
-
-    feed:{
-        flex:1
-    }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1, // Full-screen layout
+    flexDirection: "column", // Stack children vertically
+  },
+  feeds: {
+    flex: 4, 
+  },
 });
 
 export default Home;

@@ -20,14 +20,14 @@ const CreatePost = () => {
          <Text>Share</Text>
         </TouchableOpacity>
       </View>
+      
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    justifyContent:'flex-start',
     alignItems: 'center',
     padding: 20,
   },
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
   },
   create_and_post_row: {
     flexDirection: "row",
-    alignItems: "center", // Align items vertically centered
+    alignItems: "center", 
+    justifyContent:"flex-start",
     width: '100%',
   },
   send_icon: {
